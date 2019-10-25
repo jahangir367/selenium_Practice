@@ -1,27 +1,31 @@
-package Selenium.Practice.com.Nisum;
-
-
-import java.util.concurrent.TimeUnit;
+package Testng;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
-import junit.framework.Assert;
 
-public class alerts {
+public class Retrycount implements IRetryAnalyzer {
+	WebDriver driver;
+    private int retryCount = 0;
+    private int maxRetryCount = 2;
 
-	@SuppressWarnings("deprecation")
-	@Test
-	public void test1() throws InterruptedException{
-		WebDriver driver;
-		System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");
+    public boolean retry(ITestResult result) {
+
+        if (retryCount < maxRetryCount) {
+            retryCount++;
+            return true;
+        }
+        return false;
+    }
+
+    @Test(retryAnalyzer = Retrycount.class)
+    public void testGenX() throws InterruptedException {
+    	System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");
 		driver = new FirefoxDriver();
 		//driver.manage().window().maximize();
 
@@ -33,12 +37,13 @@ public class alerts {
 		String alertText = simpleAlert.getText();
 		System.out.println("Alert text is = " + alertText);
 		simpleAlert.accept();
-		Assert.assertEquals("A simple Alert", alertText);
-		driver.close();}
-	@Test
-	public void test2() throws InterruptedException{
-		WebDriver driver;
-		System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");
+		Assert.assertEquals("A simple Alert----------", alertText);
+		driver.close();
+    }
+
+    @Test(retryAnalyzer = Retrycount.class)
+    public void testGenY() {
+    	System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 
@@ -49,7 +54,6 @@ public class alerts {
 		String simple_text = simple.getText();
 		System.out.println("simple_text  is = " + simple_text);
 		simple.dismiss();	
-		Assert.assertEquals("Do you really want to delete this Customer?", simple_text);
+		Assert.assertEquals("Do you really want to delete this Customer?", simple_text);    }
 
-	}
 }
