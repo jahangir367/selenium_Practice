@@ -16,11 +16,11 @@ import org.testng.annotations.Test;
 import junit.framework.Assert;
 
 public class alerts {
+	WebDriver driver;
 
 	@SuppressWarnings("deprecation")
 	@Test
 	public void test1() throws InterruptedException{
-		WebDriver driver;
 		System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");
 		driver = new FirefoxDriver();
 		//driver.manage().window().maximize();
@@ -50,6 +50,22 @@ public class alerts {
 		System.out.println("simple_text  is = " + simple_text);
 		simple.dismiss();	
 		Assert.assertEquals("Do you really want to delete this Customer?", simple_text);
-
 	}
+	
+	/*@Test  // sendkeys in alerts
+	public void test3() throws InterruptedException {
+		
+		driver.get("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
+		driver.manage().window().maximize();
+		// This step will result in an alert on screen
+		WebElement element = driver.findElement(By.xpath("//*[@id='content']/p[16]/button"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click()", element);
+		Alert promptAlert  = driver.switchTo().alert();
+		String alertText = promptAlert .getText();
+		System.out.println("Alert text is " + alertText);
+		//Send some text to the alert
+		promptAlert .sendKeys("Accepting the alert");
+		Thread.sleep(4000); //This sleep is not necessary, just for demonstration
+		promptAlert .accept();
+	}*/
 }
