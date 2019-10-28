@@ -7,18 +7,24 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import Selenium.Practice.com.Nisum.Reusableclass;
+
 public class Depends_on_class {
 	
 	WebDriver d;
 
-	class c1 {
+	class c2 {
+		
+		//DependsOnMethods cannot be used from different class ,To resolve this we can use dependsOnGroups;
+		// this limitations it should be in a same project
+       // you need to run from .xml by using include methods
 		@Test(groups={"verifyConfig"})
 		public void verifyConfig() {
-			System.setProperty("webdriver.gecko.driver", "C:/Users/Nisum/Desktop/jahangir/Softwares/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 			d = new FirefoxDriver();	
 		}}
 
-	class c2 {
+	class c1 {
 		@Test(dependsOnGroups={"verifyConfig"})
 		public void dotest() throws InterruptedException {
 			d.get("https://www.amazon.in");

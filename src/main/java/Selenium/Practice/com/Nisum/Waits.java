@@ -15,7 +15,7 @@ public class Waits {
 	@Test
 	public void implicitwait(){
 		try {
-			System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");//E:/MyTests/Nisum/drivers/geckodriver.exe
+			System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));        //E:/MyTests/Nisum/drivers/geckodriver.exe
 	driver = new FirefoxDriver();
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

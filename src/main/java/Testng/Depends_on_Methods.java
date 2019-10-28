@@ -4,8 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+import Selenium.Practice.com.Nisum.Reusableclass;
+
 public class Depends_on_Methods {
 	WebDriver d;
+	
+
+/*Test with single test method dependency
+Test with multiple test methods dependencies
+Inherited dependency test
+Test that depends on a group*/
 
 	 @Test(dependsOnMethods  = { "meth1" })
 	    public void groupTestOne() throws InterruptedException {
@@ -29,7 +37,7 @@ public class Depends_on_Methods {
 		public void meth1()
 		{
 			System.out.println("Meth1 in GT1");
-			System.setProperty("webdriver.gecko.driver", "C:/Users/Nisum/Desktop/jahangir/Softwares/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 			d = new FirefoxDriver();	
 		}
 	 	/*@Test(groups="Group2")
@@ -53,7 +61,7 @@ public class Depends_on_Methods {
 		public void meth4()
 		{
 			System.out.println("Meth1 in GT1");
-			/*System.setProperty("webdriver.gecko.driver", "C:/Users/Nisum/Desktop/jahangir/Softwares/geckodriver.exe");
+			/*System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 			d = new FirefoxDriver();	*/
 			System.out.println("Meth3 in GT4");
 			d.get("https://www.snapdeal.com");		}

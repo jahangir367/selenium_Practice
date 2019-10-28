@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Selenium.Practice.com.Nisum.Reusableclass;
+
 
 public class Priority_testng {
 	
@@ -16,7 +18,7 @@ public class Priority_testng {
 
 	    @Test (priority=1)		
 	    public void openBrowser() {				
-	    	System.setProperty("webdriver.gecko.driver", "C:/Users/Nisum/Desktop/jahangir/Softwares/geckodriver.exe");
+	    	System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 			driver = new FirefoxDriver();	    }		
 
 	    // Method 2: Launch Google.com			

@@ -9,6 +9,8 @@ import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
+import Selenium.Practice.com.Nisum.Reusableclass;
+
 public class Retrycount implements IRetryAnalyzer {
 	WebDriver driver;
     private int retryCount = 0;
@@ -25,7 +27,7 @@ public class Retrycount implements IRetryAnalyzer {
 
     @Test(retryAnalyzer = Retrycount.class)
     public void testGenX() throws InterruptedException {
-    	System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");
+    	System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 		driver = new FirefoxDriver();
 		//driver.manage().window().maximize();
 
@@ -43,7 +45,7 @@ public class Retrycount implements IRetryAnalyzer {
 
     @Test(retryAnalyzer = Retrycount.class)
     public void testGenY() {
-    	System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");
+    	System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 

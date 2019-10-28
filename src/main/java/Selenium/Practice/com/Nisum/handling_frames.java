@@ -14,7 +14,7 @@ public class handling_frames {
 
 		@Test
 		public void handling_frames() throws InterruptedException{
-			System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");//E:/MyTests/Nisum/drivers/geckodriver.exe
+			System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));   //E:/MyTests/Nisum/drivers/geckodriver.exe
 		d = new FirefoxDriver();
 		d.manage().window().maximize();
 

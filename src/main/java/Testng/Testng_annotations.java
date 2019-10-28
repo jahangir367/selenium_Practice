@@ -20,8 +20,21 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import Selenium.Practice.com.Nisum.Reusableclass;
+
 
 public class Testng_annotations {
+	/*
+	//order of execution
+	BeforeSuite
+	BeforeTest
+	BeforeClass
+	BeforeMethod
+	Test
+	AfterMethod
+	AfterClass
+	AfterTest
+	AfterSuite*/
 
 	public static final String FileUtils = null;
 	WebDriver d;
@@ -95,7 +108,7 @@ public class Testng_annotations {
 	@BeforeSuite
 	public void beforeSuite() {
 		System.out.println("in beforeSuite");
-		System.setProperty("webdriver.gecko.driver", "C:/Users/Nisum/Desktop/jahangir/Softwares/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 		d = new FirefoxDriver();
 		d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 

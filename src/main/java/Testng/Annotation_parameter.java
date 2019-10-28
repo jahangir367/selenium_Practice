@@ -16,6 +16,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.*;
 
+import Selenium.Practice.com.Nisum.Reusableclass;
+
 public class Annotation_parameter {
 	WebDriver d;
 	@Test
@@ -55,7 +57,7 @@ public class Annotation_parameter {
 		if(browser.equals("FF"))
 		{
 			d=new FirefoxDriver();
-			System.setProperty("webdriver.gecko.driver", "C:/Users/Nisum/Desktop/jahangir/Softwares/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 
 		}
 		else if(browser.equals("GC"))

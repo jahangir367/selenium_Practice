@@ -26,7 +26,7 @@ public class webtable {
     driver = new ChromeDriver();*/
 	
 	//WebDriverManager.firefoxdriver().setup(); 
-	System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");//E:/MyTests/Nisum/drivers/geckodriver.exe
+	System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));    //E:/MyTests/Nisum/drivers/geckodriver.exe
 	driver = new FirefoxDriver();
 	driver.manage().window().maximize();
 	

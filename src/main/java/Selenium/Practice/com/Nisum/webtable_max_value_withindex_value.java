@@ -22,7 +22,7 @@ public class webtable_max_value_withindex_value {
 	@Test
 	public void test1() {
 	
-		System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");//E:/MyTests/Nisum/drivers/geckodriver.exe
+		System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));       //E:/MyTests/Nisum/drivers/geckodriver.exe
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.moneycontrol.com/stocksmarketsindia/");

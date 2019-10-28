@@ -13,7 +13,9 @@ public class Windows_handling {
 	public static void main(String[] args) throws InterruptedException
 	{
 	WebDriver d;
-	System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");//E:/MyTests/Nisum/drivers/geckodriver.exe
+	System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
+	
+	//E:/MyTests/Nisum/drivers/geckodriver.exe
 	d = new FirefoxDriver();
 	d.manage().window().maximize();
 	

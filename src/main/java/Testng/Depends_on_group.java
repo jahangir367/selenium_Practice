@@ -8,10 +8,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import Selenium.Practice.com.Nisum.Reusableclass;
+
 
 public class Depends_on_group {
 	WebDriver d;
-
+// groups are limited to the package ..and if we want to run dependency from othere package we need to import the package
 	 @Test(dependsOnGroups = { "Group1" })
 	    public void groupTestOne() throws InterruptedException {
 	        System.out.println("Group Test method one");
@@ -34,7 +36,7 @@ public class Depends_on_group {
 		public void meth1()
 		{
 			System.out.println("Meth1 in GT1");
-			System.setProperty("webdriver.gecko.driver", "C:/Users/Nisum/Desktop/jahangir/Softwares/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 			d = new FirefoxDriver();	
 		}
 	 	/*@Test(groups="Group2")
@@ -58,7 +60,7 @@ public class Depends_on_group {
 		public void meth4()
 		{
 			System.out.println("Meth1 in GT1");
-			/*System.setProperty("webdriver.gecko.driver", "C:/Users/Nisum/Desktop/jahangir/Softwares/geckodriver.exe");
+			/*System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 			d = new FirefoxDriver();	*/
 			System.out.println("Meth3 in GT4");
 			d.get("https://www.snapdeal.com");		}

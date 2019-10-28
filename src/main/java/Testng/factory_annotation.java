@@ -7,7 +7,7 @@ public class factory_annotation {
 	
 	
 	public class TestNGFactory {
-
+    //TestNG Factory is useful when you want to run multiple test classes through a single test class.
 		@Factory()
 		public Object[] getTestClasses() {
 			Object[] tests = new Object[2];

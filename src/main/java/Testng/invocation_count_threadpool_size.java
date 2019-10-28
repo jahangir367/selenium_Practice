@@ -4,12 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+import Selenium.Practice.com.Nisum.Reusableclass;
+
 
 public class invocation_count_threadpool_size {
 	
 	WebDriver driver;
 
-	
 	int count = 0;
 
 	@Test(invocationCount = 5)
@@ -17,10 +18,12 @@ public class invocation_count_threadpool_size {
 		count++;
 		System.out.println("print the count "+ count);
 	}
-	
+	// thread pool size is used with invocationcount to run test different times in particular threads
+	// thread count is used for with parallel for parallel test execution in different threads
+	// invocationTimeOut is used for to run the test in particular specific time
 	@Test(invocationCount = 4,threadPoolSize = 2)
 	public void test2() {
-		System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");//E:/MyTests/Nisum/drivers/geckodriver.exe
+		System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 		driver = new FirefoxDriver();
 		count++;
 		System.out.println("Browserr opened for = "+ count + " time");//

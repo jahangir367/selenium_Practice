@@ -18,10 +18,23 @@ import junit.framework.Assert;
 public class alerts {
 	WebDriver driver;
 
+	/*	
+      1) Simple Alert      // yes or No
+      2) Prompt Alert.     // sendkeys with yes or No
+      3) Confirmation Alert. // really want to delete the customer.
+      
+     Alert simpleAlert = driver.switchTo().alert();
+	String alertText = simpleAlert.getText();
+	simpleAlert.accept();
+	simpleAlert.dismiss();
+	simpleAlert.sendKeys("Accepting the alert");
+	 */
 	@SuppressWarnings("deprecation")
 	@Test
 	public void test1() throws InterruptedException{
-		System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");
+		//System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
+		System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
+
 		driver = new FirefoxDriver();
 		//driver.manage().window().maximize();
 
@@ -38,7 +51,7 @@ public class alerts {
 	@Test
 	public void test2() throws InterruptedException{
 		WebDriver driver;
-		System.setProperty("webdriver.gecko.driver", "E:/MyTests/Nisum/drivers/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver",Reusableclass.setPath("/src/drivers/geckodriver.exe"));
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 
@@ -51,10 +64,10 @@ public class alerts {
 		simple.dismiss();	
 		Assert.assertEquals("Do you really want to delete this Customer?", simple_text);
 	}
-	
+
 	/*@Test  // sendkeys in alerts
 	public void test3() throws InterruptedException {
-		
+
 		driver.get("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
 		driver.manage().window().maximize();
 		// This step will result in an alert on screen
