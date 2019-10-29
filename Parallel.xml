@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Parallel MultipleTests" parallel="methods" thread-count="2">
+
+	<test name="Selenium.Practice.com.Nisum">
+		<classes>
+			<class name="Selenium.Practice.com.Nisum.Explicitwait" />
+			<class name="Selenium.Practice.com.Nisum.hasmap" />
+		</classes>
+	</test>
+
+	<test name="Testng">  
+		<classes>
+			<class name="Testng.Alwaysrun_skip" />
+			<class name="Testng.Priority_testng" />
+		</classes>
+	</test>
+
+</suite>
