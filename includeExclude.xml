@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parallel MultipleTests">
+
+<test name="Inclule Exclude">
+  <classes>
+    <class name="Selenium.Practice.com.Nisum.hasmap">
+      <methods>
+        <include name=".*hasmaptest.*"/>
+        <exclude name=".*successRate.*"/>
+      </methods>
+     </class>
+  </classes>
+</test>
+</suite>

@@ -41,5 +41,5 @@ public class Priority_testng {
 			WebDriverWait waitforbutton = new WebDriverWait(driver,30);
 
 			waitforbutton.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'  Enter your email or mobile phone number')]")));
-
+driver.close();
 }}

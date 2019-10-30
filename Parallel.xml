@@ -5,7 +5,7 @@
 	<test name="Selenium.Practice.com.Nisum">
 		<classes>
 			<class name="Selenium.Practice.com.Nisum.Explicitwait" />
-			<class name="Selenium.Practice.com.Nisum.hasmap" />
+			<class name="Testng.TestNGFactory" />
 		</classes>
 	</test>
 
