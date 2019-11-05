@@ -1,4 +1,4 @@
-package Testcases;
+package Utility;
 
 import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.SessionNotCreatedException;
@@ -9,13 +9,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class driverUtils {
 	public static long DEFAULT_WAIT = 10;
+	//single ton class
 	public static WebDriver driver;
 
 
 	public static WebDriver getDefaultDriver() {
-		/*if (driver != null) {
+		if (driver != null) {
 			return driver;
-		}*/
+		}
 		System.out.println("------driver utils @before---------");
 
 		/*System.setProperty("webdriver.chrome.driver", "E:\\com.pmr.org\\drivers\\chromedriver.exe");

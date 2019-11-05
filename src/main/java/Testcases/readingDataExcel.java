@@ -1,4 +1,4 @@
-package Utility;
+package Testcases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
@@ -7,8 +7,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import Testcases.driverUtils;
-import Testcases.excelUtility;
+import Utility.driverUtils;
+import Utility.excelUtility;
 import pageObject_pageFactory.Homepage_storedemo;
 import pageObject_pageFactory.loginpage_Storedemoqa;
 
